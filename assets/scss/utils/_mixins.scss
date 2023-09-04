@@ -1,0 +1,49 @@
+
+// 재활용가능한 소스
+
+/* 1920 ~ 1069 */
+/* 기존 소스 수정 */
+
+$pc: 1799px;
+$lay-tablet: 833px; // 320
+$banner-tablet: 1023px; // 320
+$tablet: 1068px; // 735
+$mobile: 734px; // 320
+$mobile-sm: 374px; // tile-outer 적용 위해 추가
+
+@mixin pc {
+    @media (max-width: $pc) {
+        @content;
+    }
+}
+
+@mixin layTablet {
+    @media (max-width: $lay-tablet) {
+        @content;
+    }
+}
+
+@mixin bannerTablet {
+    @media (max-width: $banner-tablet) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin mobile-sm {
+    @media (max-width: $mobile-sm) {
+        @content;
+    }
+}
+

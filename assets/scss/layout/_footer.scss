@@ -1,0 +1,295 @@
+/* footer */
+.footer {
+    font-size:12px; 
+    line-height:1.3333;
+    background:#f5f5f7;
+    font-family: 'SF Pro Text' , 'SF Pro KR';
+
+    .foot-inner {
+        max-width:980px; 
+        margin:0 auto; 
+        padding:0 22px; 
+        box-sizing:unset;
+
+    @include layTablet {
+        padding:0 16px;
+    }
+        // foot-banner 영역
+        .foot-banner-list {
+            display: flex; 
+            flex-wrap:wrap; justify-content:center; padding-bottom: 56px;  border-bottom:1px solid #d2d2d7;
+
+            .foot-banner-item {
+                flex:1 25%; 
+                max-width:410px; 
+
+            @include bannerTablet {
+                flex-basis:50%;
+                &:last-child {flex-basis:100%;}
+            }
+                .foot-banner-box {
+                    margin:0 auto;
+                    padding-top: 56px;
+                    position: relative;
+                    text-align: center;
+                    width: 216px;
+                    z-index: 1;
+
+                    .foot-banner-icon {
+                        width:100%; 
+                        height:56px; background-size:100% 56px; 
+                        background-repeat:no-repeat;
+    
+                        &.box {background-image:url(../images/foot-icon01.svg);}
+                        &.won {background-image:url(../images/foot-icon02.svg);}
+                        &.carve { background-image:url(../images/foot-icon03.svg);}
+                    }
+                    .title {
+                        font-size:19px; margin-top: 10px;
+                    }
+                    .desc {
+                        font-size:14px; margin-top: 0.4em; font-weight:300; line-height:1.5714;
+                    }
+                    .link-more {
+                        font-size:14px; font-weight:300;
+                        &:after {top:0.08em; }
+                    }
+                }
+            }
+        }
+        // foot-caution 영역
+        .foot-caution {
+            padding:17px 0 11px; border-bottom:1px solid #d2d2d7;
+
+            a {color:#424245; text-decoration:underline;} 
+            .caution li {
+                color:#6e6e73; 
+                padding-bottom: 10px; font-weight:300;
+            }
+            ol {
+                list-style-position:outside; margin:0; 
+                padding:0 17px;
+            }
+        }
+        // foot-nav 영역
+        .foot-nav {
+            // foot-nav - cate-area
+            .cate-area {
+                padding: 17px 0; 
+                display: flex;
+                position:relative;color:#424245;
+            
+                @include layTablet {
+                  border-bottom:1px solid #d2d2d7;
+                }
+
+                .apple-wrap {
+                    margin-right: 10px;
+            
+                    .apple-link {
+                        width: 14px; 
+                        height: 18px; background:url(../images/apple-icon.svg)no-repeat; 
+                        background-size:14px 72px;
+                        display:block; position: relative; z-index:2; color:transparent; background-position-y:-36px;
+                    }
+                }
+                .ipad-wrap {
+                    margin-right:7px; 
+                    padding: 3px 4px 3px 0; 
+
+                    &:before {
+                        content:""; display:inline-block; vertical-align:middle; width:8px; 
+                        height:18px; background:url(../images/icon-arrow.svg)no-repeat; margin-right:11px; margin-top:-1px; background-position-y:100%;
+                    }
+                    a {font-size:12px;}
+                }
+            }
+            // foot-nav - menu-area
+            .menu-area {
+                display: flex;
+                .menu-box {
+                    flex:1 20%;
+                    
+                    .menu-box-item {
+                        .menu-title {
+                            color:#1d1d1f; 
+                            .menu-title-txt {
+                                display: block;
+                                font-size:12px; 
+                                font-weight:600;
+                                margin-right:20px; 
+                                margin-bottom:0.8em;
+                            }
+                            .menu-title-btn { 
+                                display: none;
+                            }
+                        }
+                        .menu-list {
+                            margin-right:20px;
+                            li {margin-bottom: 0.8em;}
+                            li:last-child {margin-bottom: 0;}
+                            a {color:#424245; font-weight:300;}
+                        }
+                        &.row {padding-top: 24px;}
+                    }
+                }
+                
+                @include layTablet {
+                    flex-direction:column;
+
+                    .menu-box {
+                        flex:auto;
+
+                        .menu-box-item {
+                            position: relative;
+                            z-index: 1;
+                            border-bottom:1px solid #d2d2d7;
+                            overflow: hidden;
+
+                            .menu-title {
+                                .menu-title-txt {
+                                    display: none;
+                                }
+                                .menu-title-btn {
+                                    display: flex;
+                                    justify-content:space-between;
+                                    width: 100%;
+                                    padding-top: 10px;
+                                    padding-bottom: 10px;
+                                    background: #f5f5f7;
+                                    cursor:pointer;
+                                    position: relative;
+                                    user-select:none;
+                                    z-index: 2;
+                                    .menu-title-txt {
+                                        display: block;
+                                        margin: 0;
+                                        font-weight:400;
+                                    }
+                                    .menu-title-icon {
+                                        font-size:14px;
+                                        margin-top:-2px;
+                                        margin-right: 8px;
+                                        transition:transform .3s ease;
+                                    }
+                                }
+                            }
+                            &.row {padding-top: 0;}
+            
+                            .menu-list {
+                                margin: 0;
+                                overflow: hidden;
+                                visibility:hidden;
+                                padding-top: 5px;
+                                padding-bottom: 16px;
+                                position: absolute;
+                                top: 100%;
+                                left: 0;
+                                width: 100%;
+                                z-index: -1;
+                                transform:translateY(-100px);
+                                will-change: transform;
+                                    li {margin-bottom: 0;}
+                                    a {
+                                        display: block;
+                                        padding: 6px 14px;
+                                    }
+                                }
+                            &.on {
+                                .menu-list {
+                                    position: static;
+                                    visibility: visible;
+                                    transform:none;
+                                    transition:transform 300ms ease;
+                                }
+                                .menu-title-icon {
+                                    transform:rotate(45deg) scale(1.08);
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        }
+        // foot-legal 영역
+        .foot-legal {
+            padding: 34px 0 21px;
+
+            .call{
+                margin-bottom: 7px; padding-bottom: 8px; border-bottom:1px solid #d2d2d7; 
+                color:#6e6e73;
+
+                a {color:#06c; text-decoration:underline;}
+            }
+            .copy-wrap {
+                display: flex;
+                
+                .copy {color:#6e6e73; margin:5px 30px 0 0;}
+
+                .legal-links {
+                    display: flex;
+                    margin-right: 30px;
+
+                    .legal-links-item {
+                        border-right:1px solid #86868b;
+                        margin-right: 7px;
+                        margin-top: 5px;
+
+                        &:last-child {
+                            border:none; 
+                            margin:5px 0 0 0;
+                            padding: 0;
+                        }
+
+                        a {
+                            font-weight:300;
+                            padding-right:10px;
+                            display:inline-block;
+                        }
+                    }
+                }
+                .foot-local {
+                    margin-top:5px; margin-left:auto;
+                }
+            }
+
+            @include layTablet {
+                padding:17px 0 19px;
+                
+                .call {
+                    border-bottom:none;
+                }
+                .copy-wrap {
+                    flex-direction:column;
+                    .copy {
+                        order:2;
+                        padding-top: 12px;
+                    }
+                    .copy, .legal-links {margin-right:0;}
+                    .legal-links {
+                        order:3;
+                        flex-wrap:wrap;
+
+                        .legal-links-item {
+                    
+                        }
+                    }
+                    .foot-local {
+                        order:1;
+                        margin-left:0;
+                        margin-top: 0;
+                        padding-top: 5px;
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,62 @@
+/* header */
+.header {}
+
+.gnb {
+    position:relative;
+    z-index:1000;
+
+    .common-inner {max-width:1024px; width:100%; padding:0 22px; }
+    .gnb-list {display: flex;justify-content:space-between; margin:0 -9px; height: 44px;}
+    .gnb-icon-pc {display:flex;}
+    .gnb-icon-mo {display: none;}
+    .gnb-item {display: flex; align-items:center; height: 100%;}
+    .gnb-link {font-weight:400; font-size:12px; padding:0 9px;}
+    .gnb-all {
+        display:none; 
+        width: 48px;
+
+        .gnb-all-btn {
+            position: relative;
+            display: flex;
+            justify-content:center;
+            align-items:center;
+            color: #000;
+            opacity:.8;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            transition:opacity .32s cubic-bezier(.4,0,.6,1),color .32s cubic-bezier(.4,0,.6,1);
+        }
+    }
+    
+
+    @include layTablet {
+        .common-inner {position:relative; padding: 0 48px 0 16px;  transition:background .5s ease;}
+        .common-inner.active {background: #fbfbfd;}
+        .gnb-list {height: 48px; }
+        .gnb-icon-pc {display:none;}
+        .gnb-icon-mo {display: flex;}
+        .gnb-item {
+            display: none; 
+            transition:color .32s cubic-bezier(.4,0,.6,1); 
+            height: 100%; 
+            width: 48px;
+
+            &.apple-logo {display: flex; flex-grow: 1;}
+            &.util {display: flex;}
+        }
+        .gnb-link.link-bag {
+            opacity:1;
+            transition:opacity .24s cubic-bezier(.4,0,.6,1) 80ms,visibility .24s step-start 80ms}
+        .gnb-all {
+            display: block; 
+            position:absolute; 
+            z-index: 3; 
+            top:0; 
+            right: 0;
+
+            .gnb-all-btn:hover {opacity:1;}
+        }
+        
+    }
+}

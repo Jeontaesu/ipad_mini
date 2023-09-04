@@ -1,5 +1,4 @@
 $(function(){
-
     //util-btn (max-width:833px ~ ) 클릭 이벤트
     const utilBtn = document.querySelector(".util-btn");
     const utilList = document.querySelector(".util-list");
@@ -220,15 +219,5 @@ $(function(){
     //     }
         
     // })
-
-
-    
-
-
-    
-    
-
-    
-
 });
 

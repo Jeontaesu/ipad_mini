@@ -110,7 +110,7 @@ $(function(){
                     },
                     opacity:0,
                 })
-            });
+            })
         },
     
         "(max-width: 1799px)": function() { 
@@ -126,7 +126,8 @@ $(function(){
                 ease:'none',
                 'clip-path': 'inset(0px round 0px)'
             })
-
+            intro=gsap.timeline({})
+            
             intro.to('.sc-hero .hero-title .hero-title-svg',{
                 // delay:0,
                 opacity:1, 

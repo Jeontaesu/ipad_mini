@@ -4806,6 +4806,15 @@ body {
   width: 100%;
   height: 100%;
 }
+.sc-pencil .pencil-smartfolio .pencil-video .video-wrap .video-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/smartfolio-img-large.png) no-repeat;
+  background-size: cover;
+}
 @media (max-width: 1068px) {
   .sc-pencil .pencil-smartfolio .txt-wrap {
     -ms-flex-preferred-size: 41.66%;
